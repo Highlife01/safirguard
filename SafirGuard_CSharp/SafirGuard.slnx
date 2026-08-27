@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/SafirGuard.App/SafirGuard.App.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/SafirGuard.Tests/SafirGuard.Tests.csproj" />
+  </Folder>
+</Solution>

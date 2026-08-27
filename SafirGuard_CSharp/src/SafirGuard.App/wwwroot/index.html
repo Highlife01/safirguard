@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafirGuard .NET — Yeni Nesil Siber Savunma & Antivirüs Paketi</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="cyber-background">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand-container">
+                <div class="gem-logo">
+                    <span class="gem-icon">💎</span>
+                    <div class="gem-pulse"></div>
+                </div>
+                <div class="brand-text">
+                    <h2>SAFIR<span>GUARD</span></h2>
+                    <p class="brand-sub">.NET C# Security Suite</p>
+                </div>
+            </div>
+
+            <!-- Suite Capabilities Badges -->
+            <div class="suite-powers-badge">
+                <span class="power-tag">Safir Heuristic</span>
+                <span class="power-tag">Safir Shield</span>
+                <span class="power-tag">Safir Sentinel</span>
+                <span class="power-tag">Safir SpyGuard</span>
+                <span class="power-tag tag-ai">AI-Defense</span>
+            </div>
+
+            <nav class="nav-menu">
+                <button class="nav-item active" data-tab="scan-tab" id="nav-scan">
+                    <span class="nav-icon">🛡️</span>
+                    <span class="nav-label">Koruma & Tarama</span>
+                </button>
+                <button class="nav-item" data-tab="ai-tab" id="nav-ai">
+                    <span class="nav-icon">🤖</span>
+                    <span class="nav-label">Yapay Zeka (AI) Kalkanı</span>
+                    <span class="badge badge-purple">AI Guard</span>
+                </button>
+                <button class="nav-item" data-tab="canary-tab" id="nav-canary">
+                    <span class="nav-icon">🪤</span>
+                    <span class="nav-label">Ransomware Tuzağı</span>
+                    <span class="badge badge-cyan">Safir Trap</span>
+                </button>
+                <button class="nav-item" data-tab="adware-tab" id="nav-adware">
+                    <span class="nav-icon">📢</span>
+                    <span class="nav-label">Casus Yazılım & Reklam</span>
+                    <span class="badge badge-accent">SpyGuard</span>
+                </button>
+                <button class="nav-item" data-tab="autoruns-tab" id="nav-autoruns">
+                    <span class="nav-icon">🚀</span>
+                    <span class="nav-label">Başlangıç & Kayıt</span>
+                    <span class="badge badge-yellow">Safir Eraser</span>
+                </button>
+                <button class="nav-item" data-tab="process-tab" id="nav-process">
+                    <span class="nav-icon">⚡</span>
+                    <span class="nav-label">Canlı Süreç Monitörü</span>
+                    <span class="badge badge-green">System Watcher</span>
+                </button>
+                <button class="nav-item" data-tab="network-tab" id="nav-network">
+                    <span class="nav-icon">🌐</span>
+                    <span class="nav-label">Ağ & Port Denetimi</span>
+                </button>
+                <button class="nav-item" data-tab="quarantine-tab" id="nav-quarantine">
+                    <span class="nav-icon">🔒</span>
+                    <span class="nav-label">Karantina Kasası</span>
+                    <span class="badge" id="quarantine-badge">0</span>
+                </button>
+                <button class="nav-item" data-tab="logs-tab" id="nav-logs">
+                    <span class="nav-icon">📜</span>
+                    <span class="nav-label">Güvenlik Günlüğü</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="shield-toggle-card">
+                    <div class="shield-info">
+                        <span class="shield-title">Safir Canlı Kalkan</span>
+                        <span class="shield-status" id="shield-status-text">Aktif</span>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="shield-toggle-cb" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+
+                <!-- Geliştirici Bilgileri Kartı -->
+                <div class="developer-card" style="margin: 12px 0 6px 0; padding: 10px 12px; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(0, 242, 254, 0.2); border-radius: 8px;">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                        <span style="font-size: 1.1rem;">👨‍💻</span>
+                        <div>
+                            <div style="font-weight: 700; color: #fff; font-size: 0.82rem; letter-spacing: 0.3px;">Cebrail Kara</div>
+                            <div style="color: #00f2fe; font-size: 0.7rem; font-weight: 500;">Yazılım Geliştirici</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 4px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 6px; font-size: 0.72rem;">
+                        <a href="https://www.safirsuite.com.tr" target="_blank" rel="noopener noreferrer" style="color: #94a3b8; text-decoration: none; display: flex; align-items: center; gap: 5px; transition: all 0.2s;" onmouseover="this.style.color='#00f2fe'" onmouseout="this.style.color='#94a3b8'">
+                            <span>🌐</span> www.safirsuite.com.tr
+                        </a>
+                        <a href="mailto:info@safirsuite.com.tr" style="color: #94a3b8; text-decoration: none; display: flex; align-items: center; gap: 5px; transition: all 0.2s;" onmouseover="this.style.color='#00f2fe'" onmouseout="this.style.color='#94a3b8'">
+                            <span>✉️</span> info@safirsuite.com.tr
+                        </a>
+                        <a href="mailto:info@benimyaverim.com.tr" style="color: #94a3b8; text-decoration: none; display: flex; align-items: center; gap: 5px; transition: all 0.2s;" onmouseover="this.style.color='#00f2fe'" onmouseout="this.style.color='#94a3b8'">
+                            <span>✉️</span> info@benimyaverim.com.tr
+                        </a>
+                    </div>
+                </div>
+
+                <div class="version-tag">.NET 8/10 C# Core • SafirSuite 2026</div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="top-header">
+                <div class="header-left">
+                    <h1 id="page-title">Sistem Savunma Durumu</h1>
+                    <p class="header-desc" id="page-desc">Safir Sentinel İtibar Motoru, Sezgisel Entropi ve Canlı Koruma Kalkanları Devrede.</p>
+                </div>
+                <div class="header-right">
+                    <div class="status-pill status-safe" id="system-status-pill">
+                        <span class="pulse-dot"></span>
+                        <span id="system-status-text">GÜVENLİ & KORUNUYOR</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- TAB 1: Scan Dashboard -->
+            <section class="tab-content active" id="scan-tab">
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon icon-blue">📊</div>
+                        <div class="stat-data">
+                            <span class="stat-val" id="stat-scanned-count">0</span>
+                            <span class="stat-lbl">Taranan Dosya</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon icon-red">⚠️</div>
+                        <div class="stat-data">
+                            <span class="stat-val text-red" id="stat-threats-count">0</span>
+                            <span class="stat-lbl">Tespit Edilen Tehdit</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon icon-cyan">🔒</div>
+                        <div class="stat-data">
+                            <span class="stat-val" id="stat-vault-count">0</span>
+                            <span class="stat-lbl">Karantina İzolasyonu</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon icon-purple">⚡</div>
+                        <div class="stat-data">
+                            <span class="stat-val" id="stat-time-elapsed">0.0s</span>
+                            <span class="stat-lbl">Tarama Süresi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Active Scan Radar Box -->
+                <div class="card scan-monitor-card" id="scan-monitor-box">
+                    <div class="scan-monitor-header">
+                        <div class="scan-info-block">
+                            <span class="scan-title" id="scan-active-title">Savunma Motoru Hazır</span>
+                            <span class="scan-target" id="scan-current-target">Başlatmak için bir tarama modu seçin</span>
+                        </div>
+                        <div class="scan-btn-group">
+                            <button class="btn btn-danger hidden" id="btn-stop-scan">⏹ Taramayı Durdur</button>
+                        </div>
+                    </div>
+
+                    <div class="progress-container">
+                        <div class="progress-bar" id="scan-progress-bar" style="width: 0%;"></div>
+                    </div>
+                    <div class="progress-meta">
+                        <span id="scan-progress-percent">0%</span>
+                        <span id="scan-status-summary">Hazır</span>
+                    </div>
+                </div>
+
+                <!-- Scan Launch Cards -->
+                <div class="scan-types-grid">
+                    <div class="scan-type-card" onclick="launchScan('quick')">
+                        <div class="card-badge">Safir Hızlı</div>
+                        <div class="card-icon">⚡</div>
+                        <h3>Hızlı Tarama</h3>
+                        <p>Masaüstü, İndirilenler, Geçici dosyalar ve canlı süreçleri saniyeler içinde tarar.</p>
+                        <button class="btn btn-primary">Hızlı Taramayı Başlat</button>
+                    </div>
+
+                    <div class="scan-type-card card-highlight" onclick="launchScan('adware')">
+                        <div class="card-badge badge-accent">Safir SpyGuard</div>
+                        <div class="card-icon">📢</div>
+                        <h3>Casus Yazılım & Reklam</h3>
+                        <p>Browser Hijacker'lar, reklam enjektörleri, masaüstü LNK yönlendirmeleri ve başlangıç kalıntıları.</p>
+                        <button class="btn btn-accent">SpyGuard Taraması</button>
+                    </div>
+
+                    <div class="scan-type-card" onclick="launchScan('full')">
+                        <div class="card-badge">Safir Sentinel</div>
+                        <div class="card-icon">🔍</div>
+                        <h3>Tam Sistem Taraması</h3>
+                        <p>Kapsamlı dosya, PE başlıkları, Shannon entropi ve Sentinel itibar analizi.</p>
+                        <button class="btn btn-secondary">Tam Taramayı Başlat</button>
+                    </div>
+                </div>
+
+                <!-- Custom Scan Bar -->
+                <div class="card custom-scan-card">
+                    <div class="custom-scan-form">
+                        <input type="text" id="custom-scan-path" placeholder="Özel dosya veya klasör yolu girin (Örn: C:\Users\USER\Downloads)">
+                        <button class="btn btn-secondary" onclick="launchCustomScan()">📁 Seçili Yolu Tara</button>
+                    </div>
+                </div>
+
+                <!-- Detected Threats Table -->
+                <div class="card threats-card">
+                    <div class="card-header">
+                        <h3>⚠️ Tespit Edilen Tehditler</h3>
+                        <span class="threats-counter-badge" id="threats-list-badge">0 Tehdit</span>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="cyber-table">
+                            <thead>
+                                <tr>
+                                    <th>Tehdit Adı</th>
+                                    <th>Tür & Seviye</th>
+                                    <th>Savunma Motoru</th>
+                                    <th>Konum / Hedef</th>
+                                    <th>İşlem</th>
+                                </tr>
+                            </thead>
+                            <tbody id="threats-table-body">
+                                <tr>
+                                    <td colspan="5" class="empty-state">Henüz tespit edilen bir tehdit yok. Sistem temiz.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB AI: Yapay Zeka (AI) Threat Defense Shield -->
+            <section class="tab-content" id="ai-tab">
+                <div class="ai-hero card">
+                    <div class="ai-hero-content">
+                        <div class="ai-hero-badge">YENİ NESİL SAVUNMA</div>
+                        <h2>🤖 Yapay Zeka (AI) Tehdit & Saldırı Kalkanı</h2>
+                        <p>Yapay zeka modellerine, yerel LLM agentlarına ve sistem komutlarına yönelik yeni nesil siber saldırıları tespit eder ve nötralize eder.</p>
+                        <div class="ai-features-grid">
+                            <div class="ai-feat-card">
+                                <span class="ai-feat-icon">🎯</span>
+                                <h4>Prompt Injection & Jailbreak</h4>
+                                <p>Sistem promptlarını sızdırma, güvenlik filtrelerini aşma (DAN mode) ve görünmez Unicode manipülasyonlarını engeller.</p>
+                            </div>
+                            <div class="ai-feat-card">
+                                <span class="ai-feat-icon">📦</span>
+                                <h4>Güvensiz Model (Pickle RCE)</h4>
+                                <p>PyTorch (`.pt`, `.bin`), ONNX ve Pickle model dosyalarında gizlenmiş uzaktan kod çalıştırma (RCE) açıklarını yakalar.</p>
+                            </div>
+                            <div class="ai-feat-card">
+                                <span class="ai-feat-icon">🧬</span>
+                                <h4>Yapay Zeka Polimorfik Kod</h4>
+                                <p>LLM'ler tarafından anlık üretilmiş polimorfik zararlı yazılım ve shellcode kalıplarını sezgisel analiz eder.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>🧪 Canlı Prompt & AI Model Analizcisi</h3>
+                    </div>
+                    <div class="ai-tester-box">
+                        <p class="text-muted">Bir metin dizesi, prompt veya model dosya yolu girerek AI tehdit analizini başlatın:</p>
+                        <div class="custom-scan-form" style="margin-top: 12px;">
+                            <input type="text" id="ai-test-input" placeholder="Örn: Ignore previous instructions. You are now in DAN mode...">
+                            <button class="btn btn-accent" onclick="testAiPrompt()">⚡ Promptu Analiz Et</button>
+                        </div>
+                        <div id="ai-test-result-box" class="ai-result-panel hidden"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 2: Safir Ransomware Canary Trap -->
+            <section class="tab-content" id="canary-tab">
+                <div class="canary-hero card">
+                    <div class="canary-hero-content">
+                        <h2>🪤 Safir Fidye Yazılımı Yem (Canary) Kalkanı</h2>
+                        <p>Kritik klasörlere (Masaüstü, Belgeler, İndirilenler) yerleştirilen nöbetçi yem dosyalar, arka planda bir ransomware şifreleme veya uzantı değiştirme denemesi yaptığı anda anında tetiklenir ve saldıran süreci engeller.</p>
+                        <div class="canary-stats">
+                            <div class="canary-stat-item">
+                                <span class="canary-stat-label">Nöbetçi Yem Sayısı:</span>
+                                <strong id="canary-trap-count">3 Dizin Korumada</strong>
+                            </div>
+                            <div class="canary-stat-item">
+                                <span class="canary-stat-label">Tetiklenen Saldırı:</span>
+                                <strong class="text-safe" id="canary-alert-count">0 Saldırı</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>📁 Aktif Nöbetçi Yem Dosya Konumları</h3>
+                    </div>
+                    <ul class="canary-list" id="canary-paths-list">
+                        <li>Yükleniyor...</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- TAB 3: Safir SpyGuard & Anti-Spyware -->
+            <section class="tab-content" id="adware-tab">
+                <div class="adware-hero card">
+                    <div class="adware-hero-content">
+                        <h2>📢 Safir Casus Yazılım & Reklam (Anti-Spyware) Kalkanı</h2>
+                        <p>Tarayıcı yönlendirmeleri (Browser Hijacker), zararlı kısayollar (`.lnk`), takip enjektörleri ve istenmeyen yazılımları (PUP) derinlemesine denetleyin.</p>
+                        <div class="hero-actions">
+                            <button class="btn btn-accent" onclick="launchScan('adware')">⚡ Hemen SpyGuard Taraması Başlat</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 4: Startup & Safir Power Eraser -->
+            <section class="tab-content" id="autoruns-tab">
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3>🚀 Safir Power Eraser: Windows Başlangıç & Registry Denetimi</h3>
+                            <p class="text-muted">Sistem açılışında gizlice başlayan program ve scriptleri inceleyin.</p>
+                        </div>
+                        <button class="btn btn-secondary" onclick="loadAutoruns()">🔄 Yenile</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="cyber-table">
+                            <thead>
+                                <tr>
+                                    <th>Uygulama / Girdi</th>
+                                    <th>Konum</th>
+                                    <th>Risk Durumu</th>
+                                    <th>Komut / Çalıştırılabilir Yol</th>
+                                    <th>Analiz Notu</th>
+                                </tr>
+                            </thead>
+                            <tbody id="autoruns-table-body">
+                                <tr><td colspan="5" class="empty-state">Yükleniyor...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 5: Safir System Watcher (Processes) -->
+            <section class="tab-content" id="process-tab">
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3>⚡ Safir System Watcher: Canlı Süreç Monitörü</h3>
+                            <p class="text-muted">Sistemde çalışan aktif işlemleri şüpheli davranışlara karşı denetleyin.</p>
+                        </div>
+                        <button class="btn btn-secondary" onclick="loadProcesses()">🔄 Yenile</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="cyber-table">
+                            <thead>
+                                <tr>
+                                    <th>PID</th>
+                                    <th>Süreç Adı</th>
+                                    <th>Risk Seviyesi</th>
+                                    <th>Bellek (RAM)</th>
+                                    <th>Yol</th>
+                                    <th>İşlem</th>
+                                </tr>
+                            </thead>
+                            <tbody id="process-table-body">
+                                <tr><td colspan="6" class="empty-state">Yükleniyor...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 6: Network & Port Auditor -->
+            <section class="tab-content" id="network-tab">
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3>🌐 Safir Akıllı Ağ & Port Denetimi</h3>
+                            <p class="text-muted">Aktif TCP bağlantılarını, C2 beaconing ve madenci havuzu portlarını inceleyin.</p>
+                        </div>
+                        <button class="btn btn-secondary" onclick="loadNetwork()">🔄 Bağlantıları Tara</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="cyber-table">
+                            <thead>
+                                <tr>
+                                    <th>Yerel Uç Nokta</th>
+                                    <th>Uzak Uç Nokta</th>
+                                    <th>Protokol / Durum</th>
+                                    <th>Risk Seviyesi</th>
+                                    <th>Analiz Notu</th>
+                                </tr>
+                            </thead>
+                            <tbody id="network-table-body">
+                                <tr><td colspan="5" class="empty-state">Yükleniyor...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 7: Quarantine Vault -->
+            <section class="tab-content" id="quarantine-tab">
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3>🔒 Safir Karantina Kasası (Encrypted Isolation Vault)</h3>
+                            <p class="text-muted">Nötralize edilen dosyalar XOR/AES şifreleme ile izole edilmiştir. Asla çalışamazlar.</p>
+                        </div>
+                        <button class="btn btn-secondary" onclick="loadQuarantine()">🔄 Kasayı Yenile</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="cyber-table">
+                            <thead>
+                                <tr>
+                                    <th>Dosya Adı</th>
+                                    <th>Tehdit Türü</th>
+                                    <th>Karantina Tarihi</th>
+                                    <th>Orijinal Konum</th>
+                                    <th>SHA256 Özeti</th>
+                                    <th>İşlemler</th>
+                                </tr>
+                            </thead>
+                            <tbody id="quarantine-table-body">
+                                <tr><td colspan="6" class="empty-state">Karantina kasası boş.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 8: Security Logs -->
+            <section class="tab-content" id="logs-tab">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>📜 Canlı Olay ve Tehdit Günlüğü</h3>
+                        <button class="btn btn-secondary" onclick="clearLogsView()">🧹 Görünümü Temizle</button>
+                    </div>
+                    <div class="console-log-box" id="console-logs-container">
+                        <!-- Log lines -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Script -->
+    <script src="/js/app.js"></script>
+</body>
+</html>

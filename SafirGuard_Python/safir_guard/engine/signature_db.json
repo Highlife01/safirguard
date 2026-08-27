@@ -1,0 +1,109 @@
+{
+  "signatures": [
+    {
+      "name": "EICAR-Test-File (Standard Antivirus Test Sample)",
+      "type": "Test.Antivirus",
+      "sha256": "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f",
+      "md5": "44d88612fea8a8f36de82e1278abb02f",
+      "severity": "Low",
+      "description": "Zararsız standart antivirüs test dosyası."
+    },
+    {
+      "name": "Trojan.Generic.WannaCrySample",
+      "type": "Ransomware",
+      "sha256": "ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa",
+      "md5": "db349b97c37d22f5b0d0fed84918ce06",
+      "severity": "Critical",
+      "description": "Bilinen WannaCry fidye yazılımı türevi."
+    },
+    {
+      "name": "CoinMiner.XMRig.Generic",
+      "type": "Cryptominer",
+      "sha256": "a3b9348ec7891823908234890283409823490823094820934823094823094820",
+      "md5": "e0283409283409823049823094820934",
+      "severity": "High",
+      "description": "İzinsiz arkaplan kripto para madencisi."
+    },
+    {
+      "name": "Adware.InstallCore.Dropper",
+      "type": "Adware / PUP",
+      "sha256": "b472834092834092834092834092834092834092834092834092834092834092",
+      "md5": "c1928340928340928340928340928340",
+      "severity": "Medium",
+      "description": "İstenmeyen reklam ve yazılım yükleyici kalıntısı."
+    }
+  ],
+  "content_patterns": [
+    {
+      "name": "Safir.Standard.Test.Signature",
+      "type": "Test.Antivirus",
+      "pattern": "SAFIR-ANTIVIRUS-STANDARD-TEST-SAMPLE",
+      "severity": "Low",
+      "description": "SafirGuard güvenli antivirüs test imzası dizesi."
+    },
+    {
+      "name": "EICAR-Standard-Test-Signature",
+      "type": "Test.Antivirus",
+      "pattern": "EICAR-STANDARD-ANTIVIRUS-TEST-FILE",
+      "severity": "Low",
+      "description": "EICAR antivirüs test imzası dizesi."
+    },
+    {
+      "name": "HackTool.Mimikatz.LogonPasswords",
+      "type": "HackTool/CredentialTheft",
+      "pattern": "sekurlsa::logonpasswords",
+      "severity": "Critical",
+      "description": "Windows parola çalma aracı imzası."
+    },
+    {
+      "name": "Backdoor.Webshell.GenericPHP",
+      "type": "Webshell",
+      "pattern": "eval(base64_decode($_POST[",
+      "severity": "High",
+      "description": "PHP tabanlı uzaktan komut çalıştırma arka kapısı."
+    },
+    {
+      "name": "Trojan.PowerShell.HiddenExecution",
+      "type": "Malicious Script",
+      "pattern": "-WindowStyle Hidden -ExecutionPolicy Bypass -Enc",
+      "severity": "High",
+      "description": "Gizlenmiş yetki aşımı PowerShell komut zinciri."
+    },
+    {
+      "name": "Adware.BrowserInjector.Script",
+      "type": "Adware",
+      "pattern": "window.__ad_injector_tracker_config",
+      "severity": "Medium",
+      "description": "Tarayıcı içine izinsiz reklam yerleştiren script."
+    }
+  ],
+  "adware_domains": [
+    "search-protect.com",
+    "sweet-page.com",
+    "babylon-toolbar.com",
+    "search.myway.com",
+    "dealply-installer.net",
+    "adrotator-tracker.biz",
+    "traffic-direct-ads.xyz",
+    "pop-under-network.club"
+  ],
+  "suspicious_apis": [
+    "VirtualAllocEx",
+    "WriteProcessMemory",
+    "CreateRemoteThread",
+    "SetWindowsHookExA",
+    "SetWindowsHookExW",
+    "NtUnmapViewOfSection",
+    "QueueUserAPC",
+    "IsDebuggerPresent",
+    "CheckRemoteDebuggerPresent"
+  ],
+  "suspicious_startup_names": [
+    "WindowsUpdateHelper.exe",
+    "svch0st.exe",
+    "csrss32.exe",
+    "system32_driver.exe",
+    "miner.exe",
+    "xmrig.exe"
+  ]
+}

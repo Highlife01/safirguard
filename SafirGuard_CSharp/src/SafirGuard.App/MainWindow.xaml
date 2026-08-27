@@ -1,0 +1,27 @@
+<Window x:Class="SafirGuard.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+        Title="💎 SafirGuard — Next-Gen Antivirus &amp; AI Cyber Defense Suite (SafirSuite)"
+        Height="860" Width="1380"
+        MinHeight="700" MinWidth="1024"
+        Background="#080b11" Foreground="White"
+        WindowStartupLocation="CenterScreen">
+    
+    <Grid Background="#080b11">
+        <!-- WebView2 Browser Control -->
+        <wv2:WebView2 x:Name="CyberWebView" 
+                      HorizontalAlignment="Stretch" 
+                      VerticalAlignment="Stretch" 
+                      DefaultBackgroundColor="#080b11" />
+
+        <!-- Loading Overlay -->
+        <Grid x:Name="LoadingOverlay" Background="#080b11" Visibility="Visible">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="💎 SAFIRGUARD" FontSize="30" FontWeight="ExtraBold" Foreground="#00f2fe" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                <TextBlock Text="Siber Savunma Kalkanları ve Güvenlik Motorları Başlatılıyor..." FontSize="14" Foreground="#94a3b8" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                <ProgressBar IsIndeterminate="True" Width="260" Height="4" Foreground="#00f2fe" Background="#1e293b" BorderThickness="0" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

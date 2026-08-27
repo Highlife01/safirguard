@@ -1,0 +1,19 @@
+## .NET Core & Visual Studio
+[Bb]in/
+[Oo]bj/
+publish/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Quarantine Vault (Kullanıcı verisi ve izole edilmiş zararlılar depoya girmesin)
+quarantine_vault/
+*.safir_locked
+!_safir_guard_canary_vault.dat
+
+## IDE & Editors
+.vscode/
+.idea/
+*.swp
+*~
